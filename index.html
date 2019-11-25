@@ -15,17 +15,8 @@
 
 </head>
 <body>
-<div class="parent">
-
-    <div class="vr-scene">
     <a-scene embedded id="scene">
-        <!-- <a-entity id="ctl" laser-controls></a-entity> -->
         <video id="Mary" src="/Mary.mp4" loop></video>
-
-        <!-- <a-assets>
-            <img id="left" src="left.jpg">
-            <img id="right" src="right.jpg">
-        </a-assets>	 -->
 
         <a-camera look-controls position="0 0 10" stereocam="eye:left;"></a-camera>
 
@@ -50,14 +41,7 @@
             scale="-1 1 1" 
             stereo="eye:right">
         </a-entity>
-
-        <!-- <a-sky phi-length="180" radius="5000" id="sky1" src="#left" stereo="eye:left"></a-sky>
-        <a-sky phi-length="180" radius="5000" id="sky2" src="#right" stereo="eye:right"></a-sky> -->
-
     </a-scene>
-    </div>
-
-</div>
 <script src="script.js"></script> 
 </body>
 </html>
