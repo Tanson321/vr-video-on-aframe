@@ -1,47 +1,42 @@
-<!DOCTYPE html>
-<html lang="jp">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
-    <script src="aframe-stereo-component.min.js"></script>
-
-    <link rel="stylesheet" href="stylesheet.css">
-
+<html>
+  <head>
     <title>Immersive VR</title>
+    <script src="../aframe-stereo-component.js"></script>
+    <script src="/build.js"></script>
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <a-scene>
 
-</head>
-<body>
-    <a-scene embedded id="scene">
-        <video id="Mary" src="/Mary.mp4" loop></video>
+      <video id="Mary" loop src="textures/kyuuri.mp4">
+          <source src="textures/kyuuri.mp4" type="video/mp4"/>
+      </video>
 
-        <a-camera look-controls position="0 0 10" stereocam="eye:left;"></a-camera>
+      <a-camera position="0 0 0" stereocam="eye:left;"></a-camera>
 
-        <a-entity
-            geometry="primitive: sphere;
-                                radius: 100;
-                                segmentsWidth: 64;
-                                segmentsHeight: 64;"
-            material="shader: flat; src: #Mary;"
-            scale="-1 1 1" 
-            stereo="eye:left">
-        </a-entity>
+      <a-entity geometry="primitive: sphere;
+                          radius: 5000;
+                          segmentWidth: 64;
+                          segmentHeight: 20;"
+                material="shader: flat; src:#Mary;"
+                scale="-1 1 1"
+                stereo="eye: left;
+                        mode: half;
+                        playOnClick: false;">
+      </a-entity>
 
-<!-- native sphere, will render on 'right' eye, and will take only the second half of the video for projection -->
+      <a-entity geometry="primitive: sphere;
+                          radius: 5000;
+                          segmentWidth: 64;
+                          segmentHeight: 20;"
+                material="shader: flat;
+                          src: #Mary;"
+                scale="-1 1 1"
+                stereo="eye: right;
+                        mode: half;
+                        playOnClick: false;">
+      </a-entity>
 
-        <a-entity 
-            geometry="primitive: sphere;
-                        radius: 100;
-                        segmentsWidth: 64;
-                        segmentsHeight: 64;"
-            material="shader: flat; src: #Mary;"
-            scale="-1 1 1" 
-            stereo="eye:right">
-        </a-entity>
     </a-scene>
-<script src="script.js"></script> 
-</body>
+  </body>
 </html>
