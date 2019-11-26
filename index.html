@@ -1,15 +1,15 @@
 <html>
   <head>
     <title>Immersive VR</title>
-    <script src="../aframe-stereo-component.js"></script>
-    <script src="/build.js"></script>
+    <script src="aframe-stereo-component.js"></script>
+    <script src="build.js"></script>
     <script src="main.js"></script>
   </head>
   <body>
     <a-scene>
 
-      <video id="Mary" loop src="textures/kyuuri.mp4">
-          <source src="textures/kyuuri.mp4" type="video/mp4"/>
+      <video id="Mary" loop src="kyuuri.mp4">
+          <source src="kyuuri.mp4" type="video/mp4"/>
       </video>
 
       <a-camera position="0 0 0" stereocam="eye:left;"></a-camera>
@@ -36,7 +36,6 @@
                         mode: half;
                         playOnClick: false;">
       </a-entity>
-
     </a-scene>
   </body>
 </html>
