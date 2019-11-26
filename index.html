@@ -12,30 +12,22 @@
           <source src="kyuuri.mp4" type="video/mp4"/>
       </video>
 
-      <a-camera position="0 0 0" stereocam="eye:left;"></a-camera>
+      <a-sky 
+      phi-length="180"
+      radius="5000"
+      src="#Mary"
+      stereo="eye: left; mode: half;">
+      </a-sky>
 
-      <a-entity geometry="primitive: sphere;
-                          radius: 5000;
-                          segmentWidth: 64;
-                          segmentHeight: 20;"
-                material="shader: flat; src:#Mary;"
-                scale="-1 1 1"
-                stereo="eye: left;
-                        mode: half;
-                        playOnClick: false;">
-      </a-entity>
+      <a-sky 
+      phi-length="180"
+      radius="5000"
+      src="#Mary"
+      stereo="eye: right; mode: half;">
+      </a-sky>
 
-      <a-entity geometry="primitive: sphere;
-                          radius: 5000;
-                          segmentWidth: 64;
-                          segmentHeight: 20;"
-                material="shader: flat;
-                          src: #Mary;"
-                scale="-1 1 1"
-                stereo="eye: right;
-                        mode: half;
-                        playOnClick: false;">
-      </a-entity>
+      <a-camera position="0 0 0" cursor-visible="false" stereocam="eye:left;"></a-camera>
+
     </a-scene>
   </body>
 </html>
